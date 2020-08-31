@@ -37,13 +37,6 @@ const CartProvider: React.FC = ({ children }) => {
         setProducts([...JSON.parse(storagedProducts)]);
       }
 
-
-
-
-
-
-
-
     }
 
     loadProducts();
@@ -81,6 +74,7 @@ const CartProvider: React.FC = ({ children }) => {
     }, [products]);
 
   const decrement = useCallback(async id => {
+
     const newProducts = products.map((product) => product.id === id
       ? product.quantity > 0
         ? { ...product, quantity: product.quantity - 1 }
